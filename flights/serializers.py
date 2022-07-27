@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from flights.models import Booking, Flight
+from flights.models import Booking, Flight, User
 
 
 class FlightSerializer(serializers.ModelSerializer):
@@ -25,3 +25,9 @@ class UpdateBookingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Booking
         fields = ["date", "passengers"]
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ["username", "first_name", "last_name", "password"]
